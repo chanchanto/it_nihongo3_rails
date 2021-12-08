@@ -13,7 +13,13 @@
     <%= link_to "ホーム", root_path %>
     <span style="margin-left:150px"></span>
     <% if user_signed_in? %>
-      <span>こんにちわ、<%= link_to current_user.email, users_show_path %></span>
+      <span>こんにちは、
+        <% if current_user.name? %>
+          <%= link_to current_user.name, users_show_path %>
+        <% else %>
+          <%= link_to current_user.email, users_show_path %>
+        <% end %>
+      </span>
       <br>
       <span style="margin-left:194px"></span>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
