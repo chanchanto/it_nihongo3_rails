@@ -1,5 +1,12 @@
 <h1>プロフィール</h1>
 <br>
+
+<div>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+</div>
+
 <table>
     <tr>
         <th style="text-align: right;">名前：</th>
