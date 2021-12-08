@@ -10,8 +10,12 @@
   </head>
 
   <body>
+    <%= link_to "ホーム", root_path %>
+    <span style="margin-left:150px"></span>
     <% if user_signed_in? %>
-      <p>こんにちわ、<%= current_user.email %></p>
+      <span>こんにちわ、<%= current_user.email %></span>
+      <br>
+      <span style="margin-left:194px"></span>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "サインイン", new_user_session_path %>
